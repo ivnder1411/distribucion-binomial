@@ -17,6 +17,8 @@
   <style>
     body {
       font-family: 'Times New Roman', Times, serif; /* Fuente para el texto */
+      margin: 0; /* Eliminar márgenes del body */
+      overflow: hidden; /* Evitar desplazamiento */
     }
     .definition {
       background-color: #d0e7e9; /* Color de fondo */
@@ -68,23 +70,6 @@
       text-align: center; /* Centrar el texto */
       margin-bottom: 15px;
     }
-    /* Estilos para flechas de navegación */
-    .nav-arrows {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 30px;
-    }
-    .nav-arrows a {
-      text-decoration: none;
-      color: white;
-      background-color: #007B7F;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1.2em;
-    }
-    .nav-arrows a:hover {
-      background-color: #00595c;
-    }
   </style>
 </head>
 <body>
@@ -128,27 +113,13 @@
             </ul>
           </div>
         </div>
-
-        <!-- Flechas de navegación -->
-        <div class="nav-arrows">
-          <a href="#" onclick="Reveal.prev()">⬅ Anterior</a>
-          <a href="#" onclick="Reveal.next()">Siguiente ➡</a>
-        </div>
-
       </section>
 
-      <!-- Segunda diapositiva con transición -->
+      <!-- Segunda diapositiva con GeoGebra -->
       <section data-transition="slide">
         <h2>Comportamiento del Triedro de Frenet</h2>
-        <div>
-          <iframe scrolling="no" title="Triedro de Móvil de Frenet" src="https://www.geogebra.org/material/iframe/id/aUnBbH4d/width/1376/height/657/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1376px" height="657px" style="border:0px;"> 
-          </iframe>
-        </div>
-
-        <!-- Flechas de navegación para la segunda diapositiva -->
-        <div class="nav-arrows">
-          <a href="#" onclick="Reveal.prev()">⬅ Anterior</a>
-          <a href="#" onclick="Reveal.next()">Siguiente ➡</a>
+        <div style="text-align: center;">
+          <iframe scrolling="no" title="Triedro de Móvil de Frenet" src="https://www.geogebra.org/material/iframe/id/aUnBbH4d/width/1376/height/657/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="100%" style="border:0px;"></iframe>
         </div>
       </section>
 
@@ -159,16 +130,10 @@
   <script>
     Reveal.initialize({
       hash: true,
-      width: "100%",
-      height: "100%",
-      margin: 0.1,  // Ajusta el contenido para que se ajuste a la pantalla
       transition: 'slide',  // Tipo de transición entre diapositivas
-      navigationMode: 'linear',  // Navegación con las flechas del teclado
       controls: true,  // Mostrar controles (flechas) en la interfaz
       keyboard: true,  // Habilitar navegación con el teclado
     });
   </script>
 </body>
 </html>
-
-
