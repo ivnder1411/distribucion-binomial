@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Problema de la Recta Tangente</title>
+
+  <!-- Cargar desde CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.3/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.3/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.3/theme/black.min.css">
+
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif; /* Fuente para el texto */
+    }
+    .definition {
+      background-color: #d0e7e9; /* Color de fondo */
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 2px solid #007B7F; /* Borde azul */
+      font-size: 1.5em; /* Aumentar el tamaño del texto */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .definition p {
+      margin: 5px 0;
+      text-align: center; /* Centrando el texto */
+    }
+    .grid-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .geogebra-container, .procedure-container {
+      width: 48%;
+    }
+    .geogebra-container iframe {
+      width: 100%;
+      height: 600px; /* Asegúrate de que la altura sea suficiente */
+      border: 1px solid #e4e4e4;
+      border-radius: 4px;
+      overflow: auto; /* Permite el desplazamiento si es necesario */
+    }
+    .procedure-container ul {
+      list-style-type: disc;
+      font-size: 1.5em; /* Aumentar el tamaño del texto */
+    }
+    /* Estilos para fracciones */
+    .fraction {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .fraction > span {
+      display: block;
+    }
+    .fraction > span > span {
+      display: block;
+    }
+    .fraction > span:nth-child(1) {
+      border-bottom: 1px solid; /* Línea de la división */
+    }
+    /* Estilo para las ecuaciones */
+    .equation {
+      font-family: 'Cambria Math', serif; /* Fuente para las ecuaciones */
+      font-size: 1.5em; /* Tamaño de fuente para ecuaciones */
+    }
+    h2 {
+      font-size: 2.5em; /* Tamaño del título */
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-size: 2em; /* Tamaño del subtítulo */
+      margin-bottom: 10px;
+      text-align: center; /* Centrar el subtítulo */
+    }
+    h4 {
+      font-size: 1.8em; /* Tamaño del procedimiento */
+      font-style: italic; /* Cursiva */
+      text-align: center; /* Centrar el texto */
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h2>EL PROBLEMA DE LA RECTA TANGENTE</h2> <!-- Título centrado -->
+        
+        <!-- Definición en una caja azul -->
+        <div class="definition">
+          <h3>Definición: Recta Tangente a la Gráfica de una Función</h3>
+          <p>La recta tangente a la curva C: y = f(x) en el punto P(x₀, f(x₀)) es la recta que pasa por P y tiene pendiente:</p>
+          <p style="text-align: center;" class="equation">
+            <strong>m = lim (x → x₀) <span class="fraction"><span>f(x) - f(x₀)</span><span>x - x₀</span></span></strong>
+          </p>
+          <p>siempre que este límite exista.</p>
+        </div>
+
+        <h4>Procedimiento para encontrar la recta tangente a la gráfica de una función en un punto P</h4> <!-- Procedimiento en cursiva -->
+        
+        <div class="grid-container">
+          <!-- Contenedor de GeoGebra -->
+          <div class="geogebra-container">
+            <iframe src="https://www.geogebra.org/calculator/xmutyydf?embed" allowfullscreen frameborder="0"></iframe>
+          </div>
+
+          <!-- Procedimiento a la derecha -->
+          <div class="procedure-container">
+            <ul>
+              <li>1) Encontrar la pendiente de la secante:
+                <p style="text-align:center;" class="equation">m<sub>sec</sub> = <span class="fraction"><span>f(x) - f(x₀)</span><span>x - x₀</span></span></p>
+              </li>
+              <li>2) Tomar el límite para encontrar la pendiente de la tangente:
+                <p style="text-align:center;" class="equation">m<sub>tan</sub> = lim (x → x₀) <span class="fraction"><span>f(x) - f(x₀)</span><span>x - x₀</span></span></p>
+              </li>
+              <li>3) Reemplazar en la ecuación Punto-Pendiente:
+                <p style="text-align:center;" class="equation">y - y(P) = m<sub>tan</sub> (x - x(P))</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.3/reveal.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true
+    });
+  </script>
+</body>
+</html>
