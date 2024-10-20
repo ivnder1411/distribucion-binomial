@@ -16,24 +16,22 @@
 
   <style>
     body {
-      font-family: 'Times New Roman', Times, serif; /* Fuente para el texto */
-      margin: 0; /* Eliminar márgenes del body */
-      overflow: hidden; /* Evitar desplazamiento */
+      font-family: 'Times New Roman', Times, serif;
     }
     .definition {
-      background-color: #d0e7e9; /* Color de fondo */
+      background-color: #d0e7e9;
       border-radius: 10px;
       padding: 15px;
       margin-bottom: 20px;
-      border: 2px solid #007B7F; /* Borde azul */
-      font-size: 1.5em; /* Aumentar el tamaño del texto */
+      border: 2px solid #007B7F;
+      font-size: 1.5em;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     .definition p {
       margin: 5px 0;
-      text-align: center; /* Centrando el texto */
+      text-align: center;
     }
     .grid-container {
       display: flex;
@@ -45,30 +43,46 @@
     }
     .geogebra-container iframe {
       width: 100%;
-      height: 600px; /* Asegúrate de que la altura sea suficiente */
+      height: 600px;
       border: 1px solid #e4e4e4;
       border-radius: 4px;
-      overflow: auto; /* Permite el desplazamiento si es necesario */
+      overflow: auto;
     }
     .procedure-container ul {
       list-style-type: disc;
-      font-size: 1.5em; /* Aumentar el tamaño del texto */
+      font-size: 1.5em;
     }
     h2 {
-      font-size: 2.5em; /* Tamaño del título */
+      font-size: 2.5em;
       text-align: center;
       margin-bottom: 20px;
     }
     h3 {
-      font-size: 2em; /* Tamaño del subtítulo */
+      font-size: 2em;
       margin-bottom: 10px;
-      text-align: center; /* Centrar el subtítulo */
+      text-align: center;
     }
     h4 {
-      font-size: 1.8em; /* Tamaño del procedimiento */
-      font-style: italic; /* Cursiva */
-      text-align: center; /* Centrar el texto */
+      font-size: 1.8em;
+      font-style: italic;
+      text-align: center;
       margin-bottom: 15px;
+    }
+    .nav-arrows {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    .nav-arrows a {
+      text-decoration: none;
+      color: white;
+      background-color: #007B7F;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1.2em;
+    }
+    .nav-arrows a:hover {
+      background-color: #00595c;
     }
   </style>
 </head>
@@ -78,48 +92,40 @@
       
       <!-- Primera diapositiva -->
       <section>
-        <h2>EL PROBLEMA DE LA RECTA TANGENTE</h2> <!-- Título centrado -->
-        
-        <!-- Definición en una caja azul -->
+        <h2>EL PROBLEMA DE LA RECTA TANGENTE</h2>
         <div class="definition">
           <h3>Definición: Recta Tangente a la Gráfica de una Función</h3>
           <p>La recta tangente a la curva \( C: y = f(x) \) en el punto \( P(x_0, f(x_0)) \) es la recta que pasa por \( P \) y tiene pendiente:</p>
-          <p style="text-align: center;" class="equation">
-            <strong>\[ m = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \]</strong>
-          </p>
+          <p class="equation" style="text-align: center;"><strong>\[ m = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \]</strong></p>
           <p>siempre que este límite exista.</p>
         </div>
-
-        <h4>Procedimiento para encontrar la recta tangente a la gráfica de una función en un punto \( P \)</h4> <!-- Procedimiento en cursiva -->
-        
+        <h4>Procedimiento para encontrar la recta tangente a la gráfica de una función en un punto \( P \)</h4>
         <div class="grid-container">
-          <!-- Contenedor de GeoGebra -->
           <div class="geogebra-container">
             <iframe src="https://www.geogebra.org/calculator/xmutyydf?embed" allowfullscreen frameborder="0"></iframe>
           </div>
-
-          <!-- Procedimiento a la derecha -->
           <div class="procedure-container">
             <ul>
               <li>1) Encontrar la pendiente de la secante:
-                <p style="text-align:center;" class="equation">\( m_{\text{sec}} = \frac{f(x) - f(x_0)}{x - x_0} \)</p>
+                <p class="equation" style="text-align:center;">\( m_{\text{sec}} = \frac{f(x) - f(x_0)}{x - x_0} \)</p>
               </li>
               <li>2) Tomar el límite para encontrar la pendiente de la tangente:
-                <p style="text-align:center;" class="equation">\( m_{\text{tan}} = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \)</p>
+                <p class="equation" style="text-align:center;">\( m_{\text{tan}} = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \)</p>
               </li>
               <li>3) Reemplazar en la ecuación Punto-Pendiente:
-                <p style="text-align:center;" class="equation">\( y - y(P) = m_{\text{tan}} (x - x(P)) \)</p>
+                <p class="equation" style="text-align:center;">\( y - y(P) = m_{\text{tan}} (x - x(P)) \)</p>
               </li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- Segunda diapositiva con GeoGebra -->
-      <section data-transition="slide">
+      <!-- Segunda diapositiva con transición -->
+      <section>
         <h2>Comportamiento del Triedro de Frenet</h2>
-        <div style="text-align: center;">
-          <iframe scrolling="no" title="Triedro de Móvil de Frenet" src="https://www.geogebra.org/material/iframe/id/aUnBbH4d/width/1376/height/657/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="100%" style="border:0px;"></iframe>
+        <div>
+          <iframe scrolling="no" title="Triedro de Móvil de Frenet" src="https://www.geogebra.org/material/iframe/id/aUnBbH4d/width/1376/height/657/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1376px" height="657px" style="border:0px;"> 
+          </iframe>
         </div>
       </section>
 
@@ -130,9 +136,13 @@
   <script>
     Reveal.initialize({
       hash: true,
-      transition: 'slide',  // Tipo de transición entre diapositivas
-      controls: true,  // Mostrar controles (flechas) en la interfaz
-      keyboard: true,  // Habilitar navegación con el teclado
+      width: "100%",
+      height: "100%",
+      margin: 0.1,
+      transition: 'slide',
+      navigationMode: 'linear',
+      controls: true,
+      keyboard: true,
     });
   </script>
 </body>
