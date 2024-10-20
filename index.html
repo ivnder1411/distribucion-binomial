@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.3/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.3/theme/black.min.css">
 
+  <!-- Cargar MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <style>
     body {
       font-family: 'Times New Roman', Times, serif; /* Fuente para el texto */
@@ -48,26 +52,6 @@
       list-style-type: disc;
       font-size: 1.5em; /* Aumentar el tamaño del texto */
     }
-    /* Estilos para fracciones */
-    .fraction {
-      display: inline-block;
-      text-align: center;
-      vertical-align: middle;
-    }
-    .fraction > span {
-      display: block;
-    }
-    .fraction > span > span {
-      display: block;
-    }
-    .fraction > span:nth-child(1) {
-      border-bottom: 1px solid; /* Línea de la división */
-    }
-    /* Estilo para las ecuaciones */
-    .equation {
-      font-family: 'Cambria Math', serif; /* Fuente para las ecuaciones */
-      font-size: 1.5em; /* Tamaño de fuente para ecuaciones */
-    }
     h2 {
       font-size: 2.5em; /* Tamaño del título */
       text-align: center;
@@ -95,14 +79,14 @@
         <!-- Definición en una caja azul -->
         <div class="definition">
           <h3>Definición: Recta Tangente a la Gráfica de una Función</h3>
-          <p>La recta tangente a la curva C: y = f(x) en el punto P(x₀, f(x₀)) es la recta que pasa por P y tiene pendiente:</p>
+          <p>La recta tangente a la curva \( C: y = f(x) \) en el punto \( P(x_0, f(x_0)) \) es la recta que pasa por \( P \) y tiene pendiente:</p>
           <p style="text-align: center;" class="equation">
-            <strong>m = lim (x → x₀) <span class="fraction"><span>f(x) - f(x₀)</span><span>x - x₀</span></span></strong>
+            <strong>\[ m = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \]</strong>
           </p>
           <p>siempre que este límite exista.</p>
         </div>
 
-        <h4>Procedimiento para encontrar la recta tangente a la gráfica de una función en un punto P</h4> <!-- Procedimiento en cursiva -->
+        <h4>Procedimiento para encontrar la recta tangente a la gráfica de una función en un punto \( P \)</h4> <!-- Procedimiento en cursiva -->
         
         <div class="grid-container">
           <!-- Contenedor de GeoGebra -->
@@ -114,13 +98,13 @@
           <div class="procedure-container">
             <ul>
               <li>1) Encontrar la pendiente de la secante:
-                <p style="text-align:center;" class="equation">m<sub>sec</sub> = <span class="fraction"><span>f(x) - f(x₀)</span><span>x - x₀</span></span></p>
+                <p style="text-align:center;" class="equation">\( m_{\text{sec}} = \frac{f(x) - f(x_0)}{x - x_0} \)</p>
               </li>
               <li>2) Tomar el límite para encontrar la pendiente de la tangente:
-                <p style="text-align:center;" class="equation">m<sub>tan</sub> = lim (x → x₀) <span class="fraction"><span>f(x) - f(x₀)</span><span>x - x₀</span></span></p>
+                <p style="text-align:center;" class="equation">\( m_{\text{tan}} = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \)</p>
               </li>
               <li>3) Reemplazar en la ecuación Punto-Pendiente:
-                <p style="text-align:center;" class="equation">y - y(P) = m<sub>tan</sub> (x - x(P))</p>
+                <p style="text-align:center;" class="equation">\( y - y(P) = m_{\text{tan}} (x - x(P)) \)</p>
               </li>
             </ul>
           </div>
@@ -132,8 +116,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.3/reveal.min.js"></script>
   <script>
     Reveal.initialize({
-      hash: true
+      hash: true,
+      width: "100%",
+      height: "100%",
+      margin: 0.1,  // Esto asegura que el contenido se ajuste bien a la pantalla
     });
   </script>
 </body>
 </html>
+
