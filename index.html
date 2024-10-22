@@ -16,7 +16,7 @@
 
   <style>
     body {
-      font-family: 'Times New Roman', Times, serif;
+      font-family: Arial, sans-serif; /* Cambiar a una fuente diferente */
       margin: 0; /* Eliminar márgenes del body */
       overflow: hidden; /* Evitar scroll no deseado */
     }
@@ -27,10 +27,10 @@
     .definition {
       background-color: #d0e7e9;
       border-radius: 10px;
-      padding: 10px;
-      margin-bottom: 15px;
+      padding: 3px; /* Reducir padding */
+      margin-bottom: 10px;
       border: 2px solid #007B7F;
-      font-size: 1em; /* Ajustar tamaño de texto */
+      font-size: 0.5em; /* Reducir tamaño de texto */
       color: black; /* Cambiar color a negro */
       display: flex;
       flex-direction: column;
@@ -38,7 +38,7 @@
     }
     .definition h3, .definition p {
       color: black; /* Cambiar color a negro */
-      margin: 5px 0;
+      margin: 2px 0; /* Reducir márgenes */
       text-align: center;
     }
     .grid-container {
@@ -48,37 +48,38 @@
       flex-wrap: wrap;
     }
     .geogebra-container, .procedure-container {
-      width: 48%;
+      width: 50%; /* Ajustar ancho para mover el texto hacia la derecha */
     }
     .geogebra-container iframe {
       width: 100%;
-      height: 600px; /* Aumentar altura para que no se vea cortado */
+      height: 450px; /* Aumentar altura para un mejor ajuste */
       border: 1px solid #e4e4e4;
       border-radius: 4px;
     }
     .procedure-container ul {
       list-style-type: disc;
-      font-size: 1.2em;
+      font-size: 0.6em; /* Reducir el tamaño de la lista */
+      margin-left: 20px; /* Mover el texto hacia la derecha */
     }
     h2 {
-      font-size: 1.6em; /* Ajustar el tamaño del título principal */
+      font-size: 0.7em; /* Cambiar tamaño del título principal a 0.7em */
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
     h3 {
-      font-size: 1.2em; /* Ajustar el tamaño del subtítulo */
-      margin-bottom: 10px;
+      font-size: 0.4em; /* Ajustar el tamaño del subtítulo */
+      margin-bottom: 5px;
       text-align: center;
     }
     h4 {
-      font-size: 1.1em; /* Ajustar el tamaño del texto explicativo */
+      font-size: 0.7em; /* Cambiar tamaño del texto explicativo a 0.7em */
       font-style: italic;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
     .equation {
       text-align: center;
-      font-size: 1.1em; /* Ajustar tamaño de las ecuaciones */
+      font-size: 1em; /* Ajustar tamaño de las ecuaciones a 1em */
     }
     /* Estilos para la segunda diapositiva */
     .second-slide {
@@ -97,17 +98,17 @@
       
       <!-- Primera diapositiva -->
       <section>
-        <h2>EL PROBLEMA DE LA RECTA TANGENTE</h2>
+        <h2 style="font-size: 0.7em;">EL PROBLEMA DE LA RECTA TANGENTE</h2>
         <div class="definition">
           <h3>Definición: Recta Tangente a la Gráfica de una Función</h3>
           <p>La recta tangente a la curva \( C: y = f(x) \) en el punto \( P(x_0, f(x_0)) \) es la recta que pasa por \( P \) y tiene pendiente:</p>
           <p class="equation"><strong>\[ m = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \]</strong></p>
           <p>siempre que este límite exista.</p>
         </div>
-        <h4>Procedimiento para encontrar la recta tangente a la gráfica de una función en un punto \( P \)</h4>
+        <h4 style="font-size: 0.7em; text-align: center;">Procedimiento para encontrar la recta tangente a la gráfica de una función en un punto \( P \)</h4>
         <div class="grid-container">
           <div class="geogebra-container">
-            <iframe src="https://www.geogebra.org/calculator/xmutyydf?embed" allowfullscreen frameborder="0"></iframe>
+            <iframe scrolling="no" title="Definición de derivada" src="https://www.geogebra.org/material/iframe/id/zXz3MfEf/width/1064/height/482/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri=true/rc=false/ld=false/sdz=true/ctl=false" width="1064px" height="482px" style="border:0px;"></iframe>
           </div>
           <div class="procedure-container">
             <ul>
@@ -155,3 +156,4 @@
   </script>
 </body>
 </html>
+
