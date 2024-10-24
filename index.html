@@ -1,95 +1,65 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Problema de la Recta Tangente</title>
-
-  <!-- Cargar desde CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
-
-  <!-- Cargar MathJax -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distribución Binomial</title>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
   <style>
     body {
-      font-family: Arial, sans-serif; /* Cambiar a una fuente diferente */
-      margin: 0; /* Eliminar márgenes del body */
-      overflow: hidden; /* Evitar scroll no deseado */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      overflow: hidden;
     }
     .reveal {
-      width: 100vw; /* Usar el ancho completo de la ventana */
-      height: 100vh; /* Usar la altura completa de la ventana */
+      width: 100vw;
+      height: 100vh;
     }
-    .definition {
-      background-color: #d0e7e9;
-      border-radius: 10px;
-      padding: 3px; /* Reducir padding */
-      margin-bottom: 10px;
-      border: 2px solid #007B7F;
-      font-size: 0.5em; /* Reducir tamaño de texto */
-      color: black; /* Cambiar color a negro */
+    section {
+      font-size: 1em;
+      color: black;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-    }
-    .definition h3, .definition p {
-      color: black; /* Cambiar color a negro */
-      margin: 2px 0; /* Reducir márgenes */
       text-align: center;
+      padding: 20px;
     }
-    .grid-container {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 10px;
-      flex-wrap: wrap;
+    .definition {
+      background-color: #ADD8E6;
+      border-radius: 10px;
+      padding: 20px;
+      border: 2px solid #007B7F;
+      font-size: 0.8em;
+      color: black;
+      text-align: left;
+      width: 90%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    .geogebra-container, .procedure-container {
-      width: 50%; /* Ajustar ancho para mover el texto hacia la derecha */
+
+    .footer {
+      position: relative;
+      margin-top: auto;
+      font-size: 0.9em;
+      text-align: left;
+      width: 90%;
     }
-    .geogebra-container iframe {
-      width: 100%;
-      height: 450px; /* Aumentar altura para un mejor ajuste */
-      border: 1px solid #e4e4e4;
-      border-radius: 4px;
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
     }
-    .procedure-container ul {
-      list-style-type: disc;
-      font-size: 0.6em; /* Reducir el tamaño de la lista */
-      margin-left: 20px; /* Mover el texto hacia la derecha */
+
+    .examples {
+      text-align: left;
+      font-size: 0.8em;
+      padding-left: 20px;
     }
-    h2 {
-      font-size: 0.7em; /* Cambiar tamaño del título principal a 0.7em */
-      text-align: center;
-      margin-bottom: 5px;
-    }
-    h3 {
-      font-size: 0.4em; /* Ajustar el tamaño del subtítulo */
-      margin-bottom: 5px;
-      text-align: center;
-    }
-    h4 {
-      font-size: 0.7em; /* Cambiar tamaño del texto explicativo a 0.7em */
-      font-style: italic;
-      text-align: center;
-      margin-bottom: 5px;
-    }
-    .equation {
-      text-align: center;
-      font-size: 1em; /* Ajustar tamaño de las ecuaciones a 1em */
-    }
-    /* Estilos para la segunda diapositiva */
-    .second-slide {
-      height: 80vh; /* Ajusta esto según sea necesario */
-    }
-    .second-slide iframe {
-      width: 100%;
-      height: 80vh; /* Hace que el iframe ocupe el 80% de la altura de la ventana */
-      border: 0;
-    }
+
   </style>
 </head>
 <body>
@@ -98,62 +68,181 @@
       
       <!-- Primera diapositiva -->
       <section>
-        <h2 style="font-size: 0.7em;">EL PROBLEMA DE LA RECTA TANGENTE</h2>
+        <h1>Distribución Binomial</h1>
+        <div class="footer">
+          Cátedra: Juan Domingo Arias-Montes<br>
+          Integrantes: Kevin Luna, Iván Moreira, Joaquín Opazo, Daniela Vilca y Mauricio Sanchez
+        </div>
+      </section>
+
+      <!-- Segunda diapositiva -->
+      <section>
         <div class="definition">
-          <h3>Definición: Recta Tangente a la Gráfica de una Función</h3>
-          <p>La recta tangente a la curva \( C: y = f(x) \) en el punto \( P(x_0, f(x_0)) \) es la recta que pasa por \( P \) y tiene pendiente:</p>
-          <p class="equation"><strong>\[ m = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \]</strong></p>
-          <p>siempre que este límite exista.</p>
+          <strong>¿Qué es una distribución binomial? (definición general)</strong><br><br>
+          Definición: La distribución binomial modela la cantidad de éxitos en una serie de ensayos independientes, donde cada ensayo tiene dos resultados posibles: éxito o fracaso.
         </div>
-        <h4 style="font-size: 0.7em; text-align: center;">Procedimiento para encontrar la recta tangente a la gráfica de una función en un punto \( P \)</h4>
-        <div class="grid-container">
-          <div class="geogebra-container">
-            <iframe scrolling="no" title="Definición de derivada" src="https://www.geogebra.org/material/iframe/id/zXz3MfEf/width/1064/height/482/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri=true/rc=false/ld=false/sdz=true/ctl=false" width="1064px" height="482px" style="border:0px;"></iframe>
-          </div>
-          <div class="procedure-container">
-            <ul>
-              <li>1) Encontrar la pendiente de la secante:
-                <p class="equation">\( m_{\text{sec}} = \frac{f(x) - f(x_0)}{x - x_0} \)</p>
-              </li>
-              <li>2) Tomar el límite para encontrar la pendiente de la tangente:
-                <p class="equation">\( m_{\text{tan}} = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \)</p>
-              </li>
-              <li>3) Reemplazar en la ecuación Punto-Pendiente:
-                <p class="equation">\( y - y(P) = m_{\text{tan}} (x - x(P)) \)</p>
-              </li>
-            </ul>
-          </div>
+        <div class="examples">
+          <h3>Ejemplos cotidianos:</h3>
+          <ul>
+            <li>Lanzar una moneda (cara o cruz).</li>
+            <li>Encuestas políticas (a favor o en contra de un candidato).</li>
+            <li>Evaluación de un tratamiento médico (paciente mejora o no mejora).</li>
+          </ul>
         </div>
       </section>
 
-      <!-- Segunda diapositiva con transición -->
-      <section class="second-slide">
-        <h2>Comportamiento del Triedro de Frenet</h2>
-        <div>
-          <iframe scrolling="no" title="Triedro de Móvil de Frenet" src="https://www.geogebra.org/material/iframe/id/aUnBbH4d/width/1376/height/657/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" style="width: 100%; height: 80vh; border: 0;"></iframe>
+      <!-- Tercera diapositiva -->
+      <section>
+        <div class="definition">
+          <h2>Situación Binomial</h2>
+          <ol>
+            <li>Tenemos un determinado número <em>n</em> de observaciones.</li>
+            <br>
+            <li>Las <em>n</em> observaciones son todas <strong>independientes</strong>. Es decir, saber el resultado de una observación no te indica nada sobre las restantes observaciones.</li>
+            <br>
+            <li>Cada observación tiene dos resultados posibles, que por conveniencia llamaremos “éxito” y “fracaso”.</li>
+            <br>
+            <li>La probabilidad de éxito, llámala <em>p</em>, es igual en todas las observaciones.</li>
+          </ol>
         </div>
       </section>
 
-    </div>
+      <!-- Cuarta diapositiva -->
+      <section>
+        <div class="definition">
+          <strong>Nueva Definición Técnica de Distribución Binomial</strong><br><br>
+          La distribución del recuento <strong>X</strong> de éxitos en una situación binomial es la <strong>distribución binomial</strong> con parámetros <em>n</em> y <em>p</em>. El parámetro <em>n</em> es el número de observaciones y <em>p</em> es la probabilidad de éxito de cualquier observación. Los valores de <strong>X</strong> son números enteros positivos que van de 0 a <em>n</em>.
+          <div style="font-size: 0.7em; margin-top: 10px;">
+            Las <strong>distribuciones binomiales</strong> son un tipo importante de distribuciones de probabilidad. Fíjate bien en las situaciones binomiales, ya que no todos los recuentos tienen <strong>distribuciones binomiales</strong>.
+          </div>
+        </div>
+      </section>
+      <!-- Quinta diapositiva: Notación -->
+   <section>
+    <h3>Notación para distribuciones de probabilidad binomial</h3>
+    <p style="font-size: 0.75em;">E y F (éxito y fracaso) indican las dos posibles categorías de todos los resultados.</p>
+    <ul style="font-size: 0.75em; line-height: 1.4em;">
+      <li>\( P(E) = p \) <span style="margin-left: 15px;"><em>(\( p = \text{probabilidad de un éxito} \))</em></li>
+      <li style="margin-top: 8px;">\( P(F) = 1 - p = q \) <span style="margin-left: 15px;"><em>(\( q = \text{probabilidad de un fracaso} \))</em></li>
+      <li style="margin-top: 8px;">\( n \) <span style="margin-left: 15px;"><em>(número fijo de ensayos)</em></li>
+      <li style="margin-top: 8px;">\( x \) <span style="margin-left: 15px;"><em>(un número específico de éxitos en \( n \) ensayos, donde \( x \) puede ser cualquier número entre 0 y \( n \), inclusive)</em></li>
+      <li style="margin-top: 8px;">\( p \) <span style="margin-left: 15px;"><em>(probabilidad de éxito en uno de los \( n \) ensayos)</em></li>
+      <li style="margin-top: 8px;">\( q \) <span style="margin-left: 15px;"><em>(probabilidad de fracaso en uno de los \( n \) ensayos)</em></li>
+      <li style="margin-top: 8px;">\( P(x) \) <span style="margin-left: 15px;"><em>(probabilidad de obtener exactamente \( x \) éxitos entre los \( n \) ensayos)</em></li>
+    </ul>
+  </section>
+  <!-- Quinta diapositiva -->
+      <section>
+        <h2>Ejemplo (situación binomial)</h2>
+        <div class="examples">
+          Supongamos que lanzamos una moneda justa 10 veces. Cada lanzamiento es un ensayo binomial con éxito siendo "cara".<br><br>
+          Si la probabilidad de obtener cara es 0.5 en cada lanzamiento, podemos modelar el número de caras como una <strong>distribución binomial</strong> con <em>n = 10</em> y <em>p = 0.5</em>.
+        </div>
+      </section>
+
+      <!-- Sexta diapositiva -->
+      <section>
+        <h2>Ejemplo (no es una situación binomial)</h2>
+        <div class="examples">
+          Selecciona 10 cartas de una baraja de póquer y cuenta el número <strong>X</strong> de cartas rojas. Tenemos 10 observaciones y cada una de ellas puede ser una carta roja o una carta negra. Un “éxito” es una carta roja. Pero las observaciones no son independientes.<br><br>
+          Si la primera carta es negra, la segunda carta tiene más probabilidades de ser roja, ya que quedan más cartas rojas que negras en la baraja. El recuento <strong>X</strong> no tiene una <strong>distribución binomial</strong>.
+        </div>
+      </section>
+
+      <!-- Séptima diapositiva (Introducción a la variable binomial) -->
+      <section>
+        <h2> probabilidades binomiales</h2>
+        <ul>
+          <li>Podemos calcular la probabilidad de que una variable binomial tome un valor específico sumando las probabilidades de las diferentes formas de obtener ese número de éxitos en 
+
+n observaciones. A continuación, un ejemplo para ilustrar esta idea.</li>
+        
+          <li><strong>Ejemplo</strong>: Probabilidad de que un hijo tenga sangre tipo O (probabilidad \( p = 0.25 \)).</li>
+        </ul>
+      </section>
+
+      <!-- Octava diapositiva (Paso 1: Secuencia específica) -->
+      <section>
+        <h2>Paso 1: Probabilidad de una secuencia específica</h2>
+        <div class="examples">
+          <strong>Ejemplo:</strong> En 5 hijos, la probabilidad de que 2 tengan sangre O en posiciones específicas (primero y tercero):
+          <p style="text-align: left; font-size: smaller;">
+            Debido a que los resultados son independientes, se puede aplicar la regla de la multiplicación para este tipo de sucesos:
+            <br>
+            \( P(EFEFF) = P(E)P(F)P(E)P(F)P(F) = (0.25)(0.75)(0.25)(0.75)(0.75) \)
+          </p>
+          <p>
+            Entonces, la probabilidad que buscamos es:
+            \[
+              P(EFEFF) = (0.25)^2 \cdot (0.75)^3
+            \]
+          </p>
+        </div>
+      </section>
+
+
+
+      <!-- Novena diapositiva (Paso 2: Combinaciones posibles) -->
+      <section>
+        <h2>Paso 2: Todas las combinaciones posibles</h2>
+        <div class="examples">
+          <strong>Ejemplo:</strong> ¿Cuántas combinaciones hay de 2 éxitos y 3 fracasos?
+          <ul>
+            <li>Las combinaciones posibles son 10: EEFFF, EFEFF, EFFEF, etc.</li>
+            <li>Probabilidad total de 2 éxitos: \[
+              P(X = 2) = 10 \cdot (0.25)^2 \cdot (0.75)^3
+            \]</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Nueva diapositiva: Coeficiente Binomial -->
+      <section>
+        <h2>Coeficiente Binomial</h2>
+        <ul>
+          <li>Cantidad de combinaciones posibles de <em>k</em> éxitos en <em>n</em> ensayos:</li>
+          <li>Fórmula del coeficiente binomial:
+            \[
+              \binom{n}{k} = \frac{n!}{k!(n-k)!}
+            \]
+          </li>
+          <li><strong>Ejemplo:</strong> Para \( n = 5 \), \( k = 2 \): 
+            \[
+            \binom{5}{2} = 10
+            \]</li>
+        </ul>
+      </section>
+
+      <!-- Décima diapositiva -->
+      <section>
+        <h2>Fórmula General</h2>
+        <p>La fórmula general de la distribución binomial es:</p>
+        <p>
+          \( P(X = k) = \binom{n}{k} p^k (1 - p)^{n-k} \)
+        </p>
+        <ul>
+          <li>\( n \): número total de ensayos.</li>
+          <li>\( k \): número de éxitos deseados.</li>
+          <li>\( p \): probabilidad de éxito en un solo ensayo.</li>
+          <li>\( (1 - p) \): probabilidad de fracaso en un solo ensayo.</li>
+        </ul>
+      </section>
+<!-- Última diapositiva con iframe a pantalla completa -->
+<section class="iframe-slide">
+    <h2 style="font-size: 1.5em; font-family: Arial, sans-serif;">La distribución binomial</h2>
+    <iframe 
+        scrolling="no" 
+        title="Distribución Binomial" 
+        src="https://www.geogebra.org/material/iframe/id/MfxBWg5K/width/907/height/480/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" 
+        style="width: 100%; height: 80vh; border: 0;">
+    </iframe>
+</section>
+          </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
   <script>
-    Reveal.initialize({
-      hash: true,
-      margin: 0.1,
-      transition: 'slide',
-      navigationMode: 'linear',
-      controls: true,
-      keyboard: true,
-      width: '100%', // Ajustar el ancho al 100%
-      height: '100%', // Ajustar la altura al 100%
-      // Asegúrate de que no haya escalado
-      minScale: 1,
-      maxScale: 1,
-      slideNumber: true,
-    });
+    Reveal.initialize();
   </script>
 </body>
 </html>
-
