@@ -75,6 +75,21 @@
         </div>
       </section>
 
+<section style="padding: 20px; height: 90vh; overflow-y: auto;">
+    <h2 style="text-align: center;">Índice</h2>
+    <ol style="list-style-position: inside; line-height: 1.5; font-size: 0.9em;">
+        <li>Definición General de Distribución Binomial</li>
+        <li>Situación Binomial</li>
+        <li>Definición Más Técnica de Distribución Binomial</li>	    
+        <li>Un Poco de Notación</li>
+        <li>Ejemplos de Situaciones Binomiales y No Binomiales</li>
+        <li>Probabilidades Binomiales</li>
+        <li>Coficiente Binomial y Fórmula General de la Distribución Binomial</li>
+        <li>Media y Desviación Típica Binomial</li>
+    </ol>
+</section>
+
+
       <!-- Segunda diapositiva -->
       <section>
         <div class="definition">
@@ -227,6 +242,18 @@ n observaciones. A continuación, un ejemplo para ilustrar esta idea.</li>
           <li>\( (1 - p) \): probabilidad de fracaso en un solo ensayo.</li>
         </ul>
       </section>
+      
+      <!-- Sexta diapositivaa -->
+<section>
+  <h2>Ejemplo de Distribución Binomial</h2>
+  <p>
+    Una empresa emplea a varios miles de trabajadores, de los cuales el 30% son
+    extranjeros. Si los 15 miembros del comité ejecutivo del sindicato se escogieran
+    al azar entre los trabajadores, el número de extranjeros en el comité tendría una
+    distribución binomial con \(n = 15\) y \(p = 0.3\).
+  </p>
+</section>
+
 <!-- Última diapositiva con iframe a pantalla completa -->
 <section class="iframe-slide">
     <h2 style="font-size: 1.5em; font-family: Arial, sans-serif;">La distribución binomial</h2>
@@ -237,7 +264,164 @@ n observaciones. A continuación, un ejemplo para ilustrar esta idea.</li>
         style="width: 100%; height: 80vh; border: 0;">
     </iframe>
 </section>
-          </div>
+
+<!-- Séptima diapositiva -->
+<section>
+  <h2>Media y Desviación Típica Binomiales</h2>
+  <p>
+    Si un recuento \(X\) tiene una distribución binomial basada en \(n\) observaciones con una probabilidad \(p\) de éxito, podemos calcular su <strong>media</strong> y <strong>desviación típica</strong>.
+  </p>
+  <p>
+    En general, la <strong>media</strong> de una distribución binomial es igual a \(n\) multiplicado por \(p\), es decir:
+  </p>
+  <p>
+    \[
+    \mu = np
+    \]
+  </p>
+</section>
+
+<!-- Octava diapositiva -->
+<section>
+  <h2>Fórmula de la Desviación Típica Binomial</h2>
+  <p>
+    Para calcular la <strong>desviación típica</strong> de una distribución binomial, utilizamos la fórmula:
+  </p>
+  <p>
+    \[
+    \sigma = \sqrt{np(1-p)}
+    \]
+  </p>
+  <p>
+    Aquí, \(n\) es el número de observaciones, \(p\) es la probabilidad de éxito, y \(1 - p\) es la probabilidad de fracaso. Esta fórmula nos da una medida de cuán dispersos están los resultados de los ensayos.
+  </p>
+</section>
+
+<!-- Novena diapositiva: Planteamiento del problema -->
+<section style="font-size: 0.85em;">
+  <h2>Ejemplo: Probabilidad Binomial, Media y Desviación Típica</h2>
+  <p>
+    En una fábrica, el 20% de los productos son defectuosos. Si seleccionamos 10 productos al azar, calcularemos:
+  </p>
+  <ul>
+    <li>La probabilidad de que exactamente 2 productos sean defectuosos.</li>
+    <li>La <strong>media</strong> del número de productos defectuosos.</li>
+    <li>La <strong>desviación típica</strong> del número de productos defectuosos.</li>
+  </ul>
+  <ul>
+    <li><strong>n</strong> = 10 (número de productos seleccionados)</li>
+    <li><strong>p</strong> = 0.2 (probabilidad de que un producto sea defectuoso)</li>
+    <li><strong>x</strong> = 2 (productos defectuosos)</li>
+  </ul>
+</section>
+
+<!-- Décima diapositiva: Cálculo de la probabilidad binomial -->
+<section style="font-size: 0.85em;">
+  <h2>Probabilidad Binomial: Paso a Paso</h2>
+  <p>
+    La fórmula de la probabilidad binomial es:
+  </p>
+  <p>
+    \[
+    P(X = x) = \binom{n}{x} p^x (1-p)^{n-x}
+    \]
+  </p>
+  <p>
+    Reemplazando \(n = 10\), \(x = 2\), y \(p = 0.2\):
+  </p>
+  <p>
+    \[
+    P(X = 2) = \binom{10}{2} (0.2)^2 (0.8)^8 = 45 \times 0.04 \times 0.1678 \approx 0.302
+    \]
+  </p>
+  <p>
+    La probabilidad de que exactamente 2 productos sean defectuosos es \(P(X = 2) \approx 0.302\).
+  </p>
+</section>
+
+<!-- Undécima diapositiva: Cálculo de la Media -->
+<section style="font-size: 0.85em;">
+  <h2>Cálculo de la Media</h2>
+  <p>
+    La fórmula de la <strong>media</strong> \( \mu \) es:
+  </p>
+  <p>
+    \[
+    \mu = np
+    \]
+  </p>
+  <p>
+    Reemplazando \(n = 10\) y \(p = 0.2\):
+  </p>
+  <p>
+    \[
+    \mu = 10 \times 0.2 = 2
+    \]
+  </p>
+  <p>
+    En promedio, se espera que 2 productos sean defectuosos en una muestra de 10 productos.
+  </p>
+</section>
+
+<!-- Duodécima diapositiva: Cálculo de la Desviación Típica -->
+<section style="font-size: 0.85em;">
+  <h2>Cálculo de la Desviación Típica</h2>
+  <p>
+    La fórmula de la <strong>desviación típica</strong> \( \sigma \) es:
+  </p>
+  <p>
+    \[
+    \sigma = \sqrt{np(1-p)}
+    \]
+  </p>
+  <p>
+    Reemplazando \(n = 10\), \(p = 0.2\), y \(1 - p = 0.8\):
+  </p>
+  <p>
+    \[
+    \sigma = \sqrt{10 \times 0.2 \times 0.8} = \sqrt{1.6} \approx 1.26
+    \]
+  </p>
+  <p>
+    La desviación típica es \( \sigma \approx 1.26 \).
+  </p>
+</section>
+
+<section>
+    <h2 style="font-family: Arial, sans-serif; font-weight: bold; font-size: 1.1em;">Desviación Típica en Distribución Binomial</h2>
+    <p style="font-size: 0.8em;">La desviación típica mide la variabilidad en el número de éxitos en ensayos binomiales.</p>
+    <h3 style="font-family: Arial, sans-serif; font-size: 0.8em;">Fórmula</h3>
+    <p style="font-size: 0.8em;"> \(\sigma = \sqrt{n \cdot p \cdot (1 - p)}\) </p>
+    <h3 style="font-family: Arial, sans-serif; font-size: 0.8em;">Ejemplo</h3>
+    <p style="font-size: 0.8em;">Lanzando una moneda justa (10 veces, \(p = 0.5\)): </p>
+    <ul style="font-size: 0.8em;">
+        <li>Media esperada: \(5\) caras</li>
+        <li>Desviación típica: \(\sigma \approx 1.58\)</li>
+    </ul>
+    <h3 style="font-family: Arial, sans-serif; font-size: 0.8em;">Interpretación</h3>
+    <p style="font-size: 0.8em;">Esperamos obtener entre \(3\) y \(7\) caras en promedio.</p>
+</section>
+
+<section class="iframe-slide">
+    <h2 style="font-size: 1.5em; font-family: Arial, sans-serif;">La distribución binomial</h2>
+    <iframe 
+        scrolling="no" 
+        title="Distribución Binomial" 
+        src="https://www.geogebra.org/material/iframe/id/MfxBWg5K/width/907/height/480/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" 
+        style="width: 100%; height: 80vh; border: 0;">
+    </iframe>
+</section>
+
+
+<section>
+    <h2>Bibliografía</h2>
+    <ul>
+        <li>Moore, D. (2005). <i>Estadística aplicada básica</i> (2ª ed.). Editorial.</li>
+        <li>Triola, M. F. (2018). <i>Estadística</i> (Decimosegunda ed.). Pearson Educación de México.</li>
+    </ul>
+</section>
+
+    </div>
   </div>
 
   <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
